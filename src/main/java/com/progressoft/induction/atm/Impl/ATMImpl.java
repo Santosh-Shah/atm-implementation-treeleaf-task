@@ -17,13 +17,11 @@ public class ATMImpl implements ATM {
         // Your code here
         BigDecimal accountBalance =   checkBalance(accountNumber);
 
-        if(accountBalance.compareTo(amount) < 0)
-        {
+        if(accountBalance.compareTo(amount) < 0) {
             throw new InsufficientFundsException("Insufficient balance.");
         }
 
         bankingSystem.debitAccount(accountNumber,amount);
-
         return null;
     }
 
